@@ -6,8 +6,8 @@
 
 struct ValueIndex
 {
-    std::size_t value{ 0 };
-    std::size_t index{ 0 };
+    std::size_t value { 0 };
+    std::size_t index { 0 };
 };
 
 std::size_t get_line_result(ValueIndex df, ValueIndex dl, ValueIndex wf, ValueIndex wl);
@@ -29,26 +29,29 @@ int main(int argc, char *argv[])
         std::terminate();
     }
 
-    std::size_t result{ 0 };
-    std::string line{};
+    std::size_t result { 0 };
+    std::string line {};
     while (std::getline(file, line))
     {
-        ValueIndex digit_first{};
-        ValueIndex digit_last{};
+        ValueIndex digit_first {};
+        ValueIndex digit_last {};
         std::tie(digit_first, digit_last) = get_first_and_last_digits(line);
 
-        ValueIndex written_first{};
-        ValueIndex written_last{};
+        ValueIndex written_first {};
+        ValueIndex written_last {};
         std::tie(written_first, written_last) = get_first_and_last_written_digits(line);
 
         result += get_line_result(digit_first, digit_last, written_first, written_last);;
     }
+
+    //Answer Part 1 - 54697
+    //Answer Part 2 - 54885
     std::cout << "Result: " << result << std::endl;
 }
 
 std::size_t get_line_result(ValueIndex df, ValueIndex dl, ValueIndex wf, ValueIndex wl)
 {
-    ValueIndex min{};
+    ValueIndex min {};
     if (df.value == 0)
     {
         min = wf;
@@ -62,7 +65,7 @@ std::size_t get_line_result(ValueIndex df, ValueIndex dl, ValueIndex wf, ValueIn
         min = df.index < wf.index ? df : wf;
     }
 
-    ValueIndex max{};
+    ValueIndex max {};
     if (dl.value == 0)
     {
         max = wl;
@@ -81,8 +84,8 @@ std::size_t get_line_result(ValueIndex df, ValueIndex dl, ValueIndex wf, ValueIn
 
 std::pair<ValueIndex, ValueIndex> get_first_and_last_digits(const std::string& line)
 {
-    ValueIndex first{};
-    ValueIndex last{};
+    ValueIndex first {};
+    ValueIndex last {};
 
     for (auto it = line.cbegin(); it != line.cend(); ++it)
     {
@@ -125,8 +128,8 @@ std::pair<ValueIndex, ValueIndex> get_first_and_last_written_digits(const std::s
         "nine"
     };
 
-    ValueIndex first{};
-    ValueIndex last{};
+    ValueIndex first {};
+    ValueIndex last {};
 
     for (size_t i = 0; i < digits.size(); ++i)
     {
