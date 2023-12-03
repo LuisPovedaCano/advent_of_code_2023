@@ -131,7 +131,7 @@ std::pair<ValueIndex, ValueIndex> get_first_and_last_written_digits(const std::s
     ValueIndex first {};
     ValueIndex last {};
 
-    for (std::size_t i = 0; i < digits.size(); ++i)
+    for (std::size_t i { 0 }; i < digits.size(); ++i)
     {
         std::size_t index{ line.find(digits.at(i)) };
         while(index != std::string::npos)
