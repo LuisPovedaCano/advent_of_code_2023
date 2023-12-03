@@ -22,7 +22,7 @@ int calculate_min_cubes(Game& game);
 Game get_game_from_line(const std::string& line);
 bool validate_game(const Game& bags);
 
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
     if (argc != 2)
     {

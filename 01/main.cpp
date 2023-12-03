@@ -14,7 +14,7 @@ std::size_t get_line_result(ValueIndex df, ValueIndex dl, ValueIndex wf, ValueIn
 std::pair<ValueIndex, ValueIndex> get_first_and_last_digits(const std::string& line);
 std::pair<ValueIndex, ValueIndex> get_first_and_last_written_digits(const std::string& line);
 
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
     if (argc != 2)
     {
@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
         ValueIndex written_last {};
         std::tie(written_first, written_last) = get_first_and_last_written_digits(line);
 
-        result += get_line_result(digit_first, digit_last, written_first, written_last);;
+        result += get_line_result(digit_first, digit_last, written_first, written_last);
     }
 
     //Answer Part 1 - 54697
@@ -131,7 +131,7 @@ std::pair<ValueIndex, ValueIndex> get_first_and_last_written_digits(const std::s
     ValueIndex first {};
     ValueIndex last {};
 
-    for (size_t i = 0; i < digits.size(); ++i)
+    for (std::size_t i = 0; i < digits.size(); ++i)
     {
         std::size_t index{ line.find(digits.at(i)) };
         while(index != std::string::npos)
