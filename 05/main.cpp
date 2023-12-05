@@ -64,22 +64,23 @@ int main (int argc, char* argv[])
         {
             result_1 = info.location;
         }
-#if 0
-        std::cout << "********************************************************************" << std::endl;
-        std::cout << "Seed: " << info.seed << std::endl;
-        std::cout << "Soil: " << info.soil << std::endl;
-        std::cout << "Fertilizer: " << info.fertilizer << std::endl;
-        std::cout << "Water: " << info.water << std::endl;
-        std::cout << "Light: " << info.light << std::endl;
-        std::cout << "Temperature: " << info.temperature << std::endl;
-        std::cout << "Humidity: " << info.humidity << std::endl;
-        std::cout << "Location: " << info.location << std::endl;
-        std::cout << "********************************************************************" << std::endl;
-#endif
+    }
+
+    result_2 = std::numeric_limits<std::size_t>::max();
+    for (std::size_t i { 0 }; i < seeds.size(); i+=2)
+    {
+        for (std::size_t j { seeds.at(i) }; j < seeds.at(i) + seeds.at(i + 1); ++j)
+        {
+            SeedInfo info { query_seed(j, map) };
+            if (static_cast<std::size_t>(info.location) < result_2)
+            {
+                result_2 = info.location;
+            }
+        }
     }
 
     //Answer Part 1 - 196167384
-    //Answer Part 2 -
+    //Answer Part 2 - 125742456
     std::cout << "Result 1: " << result_1 << std::endl;
     std::cout << "Result 2: " << result_2 << std::endl;
 }
