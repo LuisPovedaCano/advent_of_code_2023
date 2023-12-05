@@ -43,7 +43,7 @@ int main(int argc, char* argv[])
 
         result += get_line_result(digit_first, digit_last, written_first, written_last);
     }
-
+    file.close();
     //Answer Part 1 - 54697
     //Answer Part 2 - 54885
     std::cout << "Result: " << result << std::endl;

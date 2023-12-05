@@ -46,7 +46,7 @@ int main(int argc, char* argv[])
         combination_values.push_back(hits);
         result_1 += result;
     }
-
+    file.close();
     result_2 = calculate_number_of_scratchcards(combination_values);
 
     //Answer Part 1 - 28750

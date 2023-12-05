@@ -49,10 +49,10 @@ int main(int argc, char* argv[])
             result += game.id;
         }
     }
-
+    file.close();
     //Answer Part 1 - 2632
-    std::cout << "Result 1: " << result << std::endl;
     //Answer Part 2 - 69629
+    std::cout << "Result 1: " << result << std::endl;
     std::cout << "Result 2: " << power << std::endl;
 }
 

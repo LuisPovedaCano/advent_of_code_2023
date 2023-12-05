@@ -55,7 +55,7 @@ int main(int argc, char* argv[])
             lines.push_back(line);
         }
     }
-
+    file.close();
     std::vector<Gear> gears {};
     std::vector<Number> valid_numbers = filter_valid_numbers(numbers, lines, gears);
     std::vector<Gear> valid_gears = filter_valid_gears(gears);
